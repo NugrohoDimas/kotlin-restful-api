@@ -1,0 +1,14 @@
+@startuml
+actor "User" as User
+node "kotlin" {
+    component "Controller" as Controller
+    component "Service" as Service
+    component "Repository" as Repository
+}
+database "PostgreSQL" as database
+
+User <--> Controller
+Controller <--> Service
+Service <--> Repository
+Repository <--> database
+@enduml
